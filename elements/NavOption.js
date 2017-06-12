@@ -16,9 +16,20 @@ const NavOption = (props) => {
         backgroundColor: activeClass.length ? activeColor : bgColor
     };
 
+    const onHoverHandle = (e) => {
+        if (props.active) {
+            return;
+        }
+        e.target.style.filter = "brightness(85%)";
+    };
+    const offHoverHandle = (e) => {
+        e.target.style.filter = "";
+    };
+
     return (
         <li style={liStyle}>
-            <a id={props.id} href={"#" + props.id} className={activeClass} style={aStyle}>{props.text}</a>
+            <a id={props.id} href={"#" + props.id} className={activeClass} style={aStyle}
+               onMouseEnter={onHoverHandle} onMouseLeave={offHoverHandle}>{props.text}</a>
         </li>
     );
 };
