@@ -5,17 +5,20 @@ const NavOption = (props) => {
     const float = props.float || "left";
     const textColor = props.textColor || "white";
     const bgColor = props.bgColor || "";
+    const activeColor = props.activeColor || "#4CAF50";
+
+    const activeClass = props.active ? "active" : "";
     const liStyle = {
         float: float
     };
     const aStyle = {
         color: textColor,
-        backgroundColor: bgColor
+        backgroundColor: activeClass.length ? activeColor : bgColor
     };
 
     return (
         <li style={liStyle}>
-            <a href={'#' + props.id} style={aStyle}>{props.text}</a>
+            <a id={props.id} href={"#" + props.id} className={activeClass} style={aStyle}>{props.text}</a>
         </li>
     );
 };
