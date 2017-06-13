@@ -23,7 +23,9 @@ class PhotoStream extends React.Component {
     changeImage(offset) {
         const slides = document.getElementsByClassName('photo-slide');
         let index = this.state.activeIndex + offset;
-        index = index % slides.length;
+
+        // Negative numbers in module are weird in JS, this behaves as expected
+        index = ((index % slides.length) + slides.length) % slides.length;
 
         this.setState({
             activeIndex: index
@@ -41,8 +43,7 @@ class PhotoStream extends React.Component {
         const activeIndex = this.state.activeIndex;
         // Generate the JSX to display based on the list of photos
         const photosJSX = this.props.photos.map((photoData, i) => {
-            let display = activeIndex === i ? "inline-block" : "none";
-
+            let display = activeIndex === i ? "block" : "none";
             const style = {
                 display: display
             };
