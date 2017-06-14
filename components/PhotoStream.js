@@ -53,8 +53,8 @@ class PhotoStream extends React.Component {
         return (
             <div className="photo-container" style={style}>
                 {photosJSX}
-                <button className="slide-left" onClick={this.slideLeft}>&#10094;</button>
-                <button className="slide-right" onClick={this.slideRight}>&#10095;</button>
+                <button className="slide-button slide-left" onClick={this.slideLeft}>&#10094;</button>
+                <button className="slide-button slide-right" onClick={this.slideRight}>&#10095;</button>
             </div>
         );
     }

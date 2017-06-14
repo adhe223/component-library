@@ -29,7 +29,7 @@ class NavBar extends React.Component {
         for (let i = 0, count = 0; i < this.props.options.length; i++) {
             const option = this.props.options[i];
             const active = this.props.options[i].id === this.state.active;
-            optionsJSX.push(<NavOption key={count} id={option.id} text={option.text} active={active}/>);
+            optionsJSX.push(<NavOption key={count} id={option.id} text={option.text} active={active} float={option.float} />);
 
             count = count + 2;
         }

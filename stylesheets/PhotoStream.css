@@ -5,4 +5,27 @@
 
 .photo-container {
     display: inline-block;
+    position: relative;
+}
+
+.slide-button {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    padding: 8px 16px;
+    opacity: 0.6;
+}
+
+.slide-left {
+    left: 0;
+}
+
+.slide-right {
+    right: 0;
 }
